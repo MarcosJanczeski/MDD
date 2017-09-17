@@ -43,8 +43,8 @@ class DB {
     where = where.substr(0, where.length-5)
     return where
   }
-  static destroy(table, id, callback) {
-    DB.query(`DELETE FROM ${table} WHERE id = ${id} RETURNING *;`, callback)
+  static destroy(table, obj, callback) {
+    DB.query(`DELETE FROM ${table} WHERE id = ${obj.id} RETURNING *;`, callback)
   }
   static save(table, obj, callback) {
     DB.query(obj.id ? DB.buildUpd(table, obj) : DB.buildIns(table, obj), callback)

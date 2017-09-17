@@ -9,6 +9,6 @@ const DB = require('./db')
     DB.save(table, data, (rs) => res.end(JSON.stringify(rs)))
   }
   , DELETE = (req, res, table, data) => {
-    res.end(JSON.stringify({ method: req.method, json: data }))
+    DB.destroy(table, data, (rs) => res.end(JSON.stringify(rs)))
   }
 module.exports = { GET, POST, PUT, DELETE }
