@@ -1,4 +1,4 @@
-const DB = require('../db')
+const DB = require('./db')
   , GET = (req, res, table, data) => {
     res.end(JSON.stringify({ method: req.method, json: data }))
   }

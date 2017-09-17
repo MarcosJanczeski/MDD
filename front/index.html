@@ -12,19 +12,14 @@
   <button onClick='ajax({
     method: "GET", 
     path: "usuarios", 
-    callback: render,
-    json: {
-      username: "MDDMasterManager",
-      pwd: "MDDMasterManager",
-      who: 1,
-    }
+    callback: render
   })'>get</button>
   <button onClick='ajax({
     method: "POST", 
     path: "usuarios", 
     callback: render,
     json: {
-      username: "Gerentelino Gastrulinhares Delares",
+      username: "Gerentelino Gastruli",
       pwd: "senha",
       who: 1,
     }
@@ -33,8 +28,8 @@
     method: "PUT", 
     path: "usuarios", 
     callback: render,
-    json: {id: 2,
-      username: "Gerentelino Gastrulinhares Delares"}
+    json: {id: 4,
+      username: "GerentelinoGDelares"}
   })'>put</button>
   <button onClick='ajax({
     method: "DELETE", 

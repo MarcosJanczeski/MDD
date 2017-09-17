@@ -1,5 +1,4 @@
 const url = require('url')
-, DB = require('../DB')
 , server = require('http').createServer((req, res) => {
   const table = req.url.split('?')[0].split('/')[1]
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -15,7 +14,7 @@ const url = require('url')
     }).on('end', () => {
       data !== '' && (data = JSON.parse(data))
       try {
-        //require('./routes/' + table)[req.method](req, res, table, data)
+        require('./router')[req.method](req, res, table, data)
       } catch (err) {
         console.log(`server.js-> erro ao tentar carregar ./routes/${table}`)
         console.error(err)
